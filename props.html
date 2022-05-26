@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        // Bài tập PostItem.js
+        // Đang dùng destructuring, nguyên mẫu function PostItem(props) rồi xuống dưới gọi props.title,image như Object
+        function PostItem({
+            image,
+            title,
+            description,
+            published,
+            // fix khi không truyền callback 2, 3 mà gọi nó ra 
+            // callback = () => {} mặc định thằng không truyền là function thì không lỗi, hoặc dùng if như dưới
+        }) {
+
+            // console.log(props);
+            // if (typeof props.callback === 'function')
+            //     props.callback(Math.random())
+            return (
+                // <div className="post-item">
+                //     <label htmlFor="txtEmail">Email</label>
+                //     <input id="txtEmail"/>
+                //     <img src="" alt="" />
+                //     <h2 className="post-title">ReactJS</h2>    
+                //     <p className="post-desc">Học trên F8</p>    
+                //     <p className="post-published">EveryDay</p>    
+                // </div>
+                // Đổi sang linh động không viết hardcode như trên
+                <div className="post-item">
+                    <img src={image} alt={title} />
+                    <h2 className="post-title">{title}</h2>    
+                    <p className="post-desc">{description}</p>    
+                    <p className="post-published">{published}</p>    
+                </div>
+            )
+        }
+
+        // App.js
+        // callback là 1 hàm được truyền qua đối số của 1 hàm khác
+        function App() {
+            return (
+                <div id="wrapper">
+                    <PostItem 
+                        title="1 ReactJS"
+                        image="https://images.unsplash.com/photo-1652709113608-92135acdaafc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80" 
+                        description="1 Học trên F8" 
+                        published="1 EveryDay"
+                        data={[{ a: 1 }, { b: 2 }]}
+                        // callback={(random) => {
+                        //     console.log('random:', random)
+                        // }}
+                    /> 
+                    <PostItem 
+                        title="2 ReactJS"
+                        image="https://images.unsplash.com/photo-1652709113608-92135acdaafc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80" 
+                        description="2 Học trên F8" 
+                        published="2 EveryDay"
+                    />    
+                    <PostItem 
+                        title="3 ReactJS"
+                        image="https://images.unsplash.com/photo-1652709113608-92135acdaafc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80" 
+                        description="3 Học trên F8" 
+                        published="3 EveryDay"
+                    />       
+                </div>
+            )
+        }
+
+        // index.js
+        ReactDOM.render(<App />, document.getElementById('root'))
+
+    </script>
+</body>
+</html>

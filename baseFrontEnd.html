@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        đồng bộ: 1 chương trình chạy sẽ chạy từ trên xuống, tại 1 thời điểm chỉ thực thi 1 dòng lệnh duy nhất, có nghĩa là 1 function dựa trên kết
+        quả của 1 function khác thì cần phải đợi cho đến khi function kia có kết quả mới chạy tiếp
+        promises đơn giản là 1 object giúp chúng ta thực hiện các tác vụ bất đồng bộ trong JS
+        function hoạt động giống như object nên chúng ta có thể truyền 1 function vào 1 function khác như tham số
+        async await giúp viết 1 đoạn code bất đồng bộ như đồng bộ giúp đọc dễ hiểu hơn
+        bất đồng bộ nghĩa là có thể di chuyển 1 tác vụ khác thực thi mà không cần phải cho đến khi tác vụ hiện tại thực thi xong, giúp chúng ta thực hiện nhiều tác vụ đồng thời do đó giúp chúng ta làm nhiều việc hơn trong 1 khoảng thời gian
+        DOM là viết tắt từ document object model gồm 3 thành phần: element, attribute, text
+        closure là một hàm có thể ghi nhớ nơi nó được tạo và truy cập các biến bên ngoài phạm vi của nó
+        closure là một hàm nằm bên trong một hàm khác, có thể truy cập biến của hàm bên ngoài (chứa nó).
+        Sử dụng closure để xác định các biến private, tạo một Function factory
+        Hàm Factory trong JavaScript là tạo bản thiết một đối tượng.
+        Hoisting là đưa phần khai báo lên đầu phạm vi
+        hoisting: nghĩa là dù khai báo biến, khai báo hàm đều sẽ được đem lên đầu phạm vi trước khi code được thực hiện. cũng hoạt động tương tự với hàm
+        javascript chạy trên trình duyệt Front end, chạy trên server BackEnd: NodeJS
+        string, number, boolean, null, và undefined, Object, array
+        var: global scope khai báo biến với var được xác định có phạm vi toàn cục (global) hoặc phạm vi cục bộ/ hàm nếu khai báo trong hàm, có thể được tái khai báo và cập nhật
+        let: block scope, nghĩa là phạm vi của khối trong cặp ngoặc {}, cho phép cập nhật chứ không được tái khai báo lại
+        dùng let phạm vi nó trong hàm sẽ dễ quản lý hơn so với var
+        callback là 1 hàm được truyền qua đối số của 1 hàm khác, dùng trong trường hợp bất đồng bộ chưa hoàn thành xong ngay lúc chương trình chạy thì truyền vô 1 callback để nhận kết quả đó để chạy ngay sau khi có kết quả
+        khi muốn lắng nghe event cũng gọi callback vào để khi người dùng nhấn chuột hay hover chuột sẽ gọi hàm đó
+        Điều này có nghĩa là thay vì đợi phản hồi rồi mới tiếp tục, JavaScript sẽ thực thi, đồng thời “lắng nghe” các sự kiện khác
+        === so sánh tuyệt đối, so cả giá trị và kiểu dữ liệu
+        props dùng làm đối số cho Component, truyền dữ liệu từ Component cha xuống Component con
+        rest: khi kết hợp destructuring, định nghĩa tham số
+        spread: rãi như đối số, còn lại
+        Hook là những method viết sẵn, cung cấp bởi thư viện ReactJS, chỉ dùng cho function Component, giúp đơn giản dễ hiểu, không cần dùng this
+        useState khi có dữ liệu đang hiển thị ra giao diện người dùng, muốn dữ liệu thay đổi thì giao diện tự động cập nhật lại (render lại theo dữ liệu)
+        useEffect khi muốn thực hiện các side effect:
+            Cập nhật DOM, call API, add/removeListener, un/subscribe, set/clearInterval, set/clearTimeout
+        Khác nhau useEffect và useLayoutEffect
+            useEffect: 
+                1. Cập nhật lại state
+                2. Cập nhật lại DOM
+                3. Render lại UI
+                4. Gọi cleanup nếu deps thay đổi
+                5. Gọi useEffect callback
+            useLayoutEffect: 
+                1. Cập nhật lại state
+                2. Cập nhật lại DOM
+                4. Gọi cleanup nếu deps thay đổi (sync)
+                5. Gọi useLayoutEffect callback (sync)
+                3. Render lại UI
+        useRef lưu các giá trị qua 1 tham chiếu bên ngoài
+        memo() check các props của Component, sau mỗi lần re-render có bị thay đổi hay không, nếu 1 props bị thay đổi sẽ cho phép re-render lại
+        useMemo tránh thực hiện lại logic nào đó không cần thiết, useMemo là hook gắn vào function, memo là higher order component để ôm Component
+        useCallback tránh tạo ra những hàm mới không cần thiết trong function Component, dẫn tới Component con bị re-render không cần thiết
+        useReducer cung cấp thêm 1 lựa chọn để sử dụng state cho function Component, số lượng state trong 1 Component nhiều
+        useContext giúp đơn giản hóa việc truyền dữ liệu từ Component cha xuống Component con mà không cần props
+        useImperativeHandle tùy chỉnh được wrap của 1 function Component
+     -->
+</body>
+</html>

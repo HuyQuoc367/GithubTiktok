@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var courses = [
+            {
+                id: 1,
+                name: 'Javascript',
+                coin: 100
+            },
+            {
+                id: 2,
+                name: 'HTML, CSS',
+                coin: 200
+            },
+            {
+                id: 3,
+                name: 'Ruby',
+                coin: 220
+            },
+        ]
+
+        // Cách thường
+        // var totalCoin = 0;
+        // for (var course  of courses) {
+        //     totalCoin += course.coin;
+        // }
+        // console.log(totalCoin);
+
+        // reduce
+        var i = 0;
+        function coinHandler(accumulator, currentValue) {
+            // i++;
+            // console.log(i)
+            return accumulator + currentValue.coin;
+        }
+        var totalCoin = courses.reduce(coinHandler, 0);
+        console.log(totalCoin)
+        // destructuring + arrow function
+        // var totalCoin = courses.reduce((a, b) => a + b.coin, 0);
+        // console.log(totalCoin)
+    </script>
+</body>
+</html>

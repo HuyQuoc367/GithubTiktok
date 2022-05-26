@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Định nghĩa key cho Object dưới dạng biến -->
+    <script>
+        //Định nghĩa key: value
+        // var name = 'Javascript';
+        // var price = '1000';
+        // var course = {
+        //     name,
+        //     price
+        // }
+
+        // Định nghĩa method
+        // var name = 'Javascript';
+        // var price = '1000';
+        // var course = {
+        //     name,
+        //     price,
+        //     getName() {
+        //         return this.name;
+        //     }
+        // }
+        // console.log(course.getName());
+
+        // Định nghĩa cho Object dưới dạng biến
+        var fieldName = 'name';
+        var fieldPrice = 'price';
+        const course = {
+            [fieldName]: 'Javascript',
+            [fieldPrice]: 1000
+        }
+        console.log(course);
+    </script>
+</body>
+</html>

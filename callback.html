@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Callback là hàm được truyền qua đối số của hàm khác -->
+    <script>
+        function myFunction(param) {
+            if (typeof param === 'function')
+                param(234);
+        }
+
+        function myCallback(value) {
+            console.log('value: ', value);
+        }
+        
+        myFunction(myCallback);
+
+        // Định nghĩa map2
+        Array.prototype.map2 = function(callback) {
+            //console.log(this) chính là thằng course gọi tới
+            var arrayLength = this.length;
+            var output = [];
+            for (var i = 0; i < arrayLength; ++i) {
+                var result = callback(this[i]);
+                output.push(result);
+            }
+            return output;
+        }
+
+        var course = [
+            'Javascript',
+            'PHP',
+            'Ruby'
+        ];
+
+        // Truyền vào 1 function thì hàm truyền đối số cũng sẽ nhận được function
+        var htmls2 = course.map2(function(course) {
+            return `<h2>${course}</h2>`
+        });
+
+        // function myFunction2(course) {
+        //     console.log(course)
+        // }
+        var htmls = course.map(function(course) {
+            return `<h2>${course}</h2>`
+        });
+        console.log(htmls2.join(''))
+    </script>
+</body>
+</html>

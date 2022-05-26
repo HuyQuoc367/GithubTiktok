@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1 id="heading">Hello</h1> -->
+    <div id="root"></div>
+    <script>
+        // const h1 = document.getElementById('heading');
+        // const h1 = document.querySelector('#heading'); Trả về Object
+        // console.log(h1);
+        
+        // const h1 = document.createElement('h1')
+        // h1.innerHTML = 'Hello'
+        // console.log(h1);
+        // Render
+        // document.body.appendChild(h1)
+
+        // const p = document.createElement('p')
+        // p.innerHTML = 'Hello các bạn'
+        // p.id = 'idHello'
+        // p.className = 'classHello'
+        // document.querySelector('body').appendChild(p)
+        // document.querySelector('#idHello').style.color = 'red'
+        // console.log(p);
+
+        const root = document.getElementById('root')
+        const h1 = document.createElement('h1')
+        h1.innerHTML = 'Hello'
+        h1.id = 'heading'
+        h1.className = 'test class-2'
+        // h1.style.color = 'red';
+        // h1.style = 'color: red; font-size: 20px';
+        Object.assign(h1.style, {
+            color: 'blue',
+            backgroundColor: 'black'
+        })
+
+        console.log(h1);
+
+        root.appendChild(h1)
+    </script>
+</body>
+</html>

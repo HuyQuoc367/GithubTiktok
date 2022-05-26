@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 2 kiểu truyền cho Component string literals và {expression} 
+        {} không phải truyền JS gì cũng đc như if switch lỗi ngay, kiểu nó là toán tử 3 ngôi hoặc gán, toán tử + - * /, array, Object, ...
+    -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Dùng toán tử spread, rest để không phải tryền nhiều props label, type, placeholder
+        // Trên tham số là rest, dưới rải vào là spread
+        function Input({ label, ...inputProps }) {
+            return (
+                <div>
+                    <label>{label}</label>
+                    <input {...inputProps}/>    
+                </div>
+            )
+        }
+
+        function Button({ title }) {
+            return (
+                <button>{title}</button>
+            )
+        }
+        function Button2({ children }) {
+            return (
+                <button>{children}</button>
+            )
+        }
+        // Cách viết như html, truyền props Click me đã thành children
+        // function App() {
+        //     const title = "Click me"
+        //     return (
+        //         <div id="wrapper">
+        //             <Button2>{true && 'Click me'}</Button2>
+        //         </div>
+        //     )
+        // }
+        // <Button primary title={title} />
+        function App() {
+            const title = "Click me"
+            return (
+                <div id="wrapper">
+                    <Input 
+                        label="Full name"
+                        type="textbox"
+                        placeholder="Enter name ..."
+                        onFocus={() => console.log(Math.random())}
+                    />
+                </div>
+            )
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'))
+    </script>
+</body>
+</html>

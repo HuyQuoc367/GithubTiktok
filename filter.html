@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        forEach() duyệt qua từng phần tử của mảng
+        every() trả về giá trị boolean, duyệt qua tất cả phần tử, true khi tất cả thỏa mãn điều kiện, chỉ cần 1 phần tử không thỏa trả về false
+        some() ngược lại với every, true chỉ cần 1 phần tử thỏa mãn sẽ không duyệt tiếp nữa 
+        find() tìm kiếm theo điều kiện, nếu thỏa mãn sẽ dừng duyệt trả về chính phần tử đó, nếu duyệt hết không có trả về undefined
+        filter() giống find nhưng trả về tất cả các phần tử nếu thỏa mãn
+     -->
+    <script>
+        const courses = [
+            {
+                id: 0,
+                coin: 100,
+                name: 'A'
+            },
+            {
+                id: 1,
+                coin: 300,
+                name: 'B'
+            },
+            {
+                id: 2,
+                coin: 500,
+                name: 'C'
+            }
+        ]
+
+        const coursesFilter = courses.filter((course, index) => {
+            console.log(index)
+            return course.coin > 200
+        })
+        console.log(coursesFilter);
+        
+    </script>
+</body>
+</html>

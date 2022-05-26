@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function logger(log){
+        //     console.log(log);
+        // }
+        // logger("Hello");
+
+        const logger = (log) => {
+            console.log(log);
+        }
+        logger("Hello");
+
+        // Viết bình thường
+        // const sum = (a, b) => {
+        //     return  a + b;
+        // }
+        // Viết ngắn ngọn khi return
+        const sum = (a, b) => a + b;
+
+        // Return Object
+        // const sum2 = (a, b) => {
+        //     return {
+        //         a: a,
+        //         b: b
+        //     };
+        // }
+        // Ngắn gọn (đằng sau mũi tên khác dấu {} mới return, không nó sẽ hiểu {} là khối lệnh )
+        const sum2 = (a, b) => ({a: a, b: b});
+        
+        // Khi chỉ có 1 tham số thì gọn hơn có thể bỏ ()
+        const logger2 = log => console.log(log);
+        logger2("Hello2");
+        console.log(sum2(2, 4));
+        // function thông thường
+        // Object , arrowfunction không có context(this)
+        const obj = {
+            name: 'Huy',
+            getName: function(){
+                return this.name;
+            }
+        };
+        console.log(obj.getName());
+
+        // Constructor function
+        const Obj2 = function(name, age){
+            this.name = name;
+            this.age = age;
+        }
+        // arrowfunction sẽ lỗi 'Obj2 is not constructor vì arrow k có context(this)'
+        // const Obj2 = (name, age) => {
+        //     this.name = name;
+        //     this.age = age;
+        // }
+        const testObj2 = new Obj2('Huy', 23);
+        console.log(testObj2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+body{
+    font-size: 62.5%;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to right top, #ff4988, #ffc781, #fffefc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.signup{
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    border-radius: 10px;
+    padding: 55px 35px;
+}
+.signup-heading{
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+.signup-already{
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 35px;
+}
+.signup-link{
+    color: #00aefd;
+    font-size: inherit;
+    text-decoration: none;
+}
+.signup-link-underline{
+    text-decoration: underline;
+}
+.form-group{
+    margin-bottom: 15px;
+}
+.form-group-2{
+    display: flex;
+    justify-content: space-between;
+}
+.form-input{
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    padding: 12px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+    border: 1px solid #eee;
+    background: #eee;
+    transition: all 0.2s ease; 
+    width: 100%;
+}
+.form-input:focus{
+    border-color: #eee;
+    background: white;
+}
+.form-group-2 > .form-input{
+    width: calc(50% - 3px);
+}
+.form-group-2 > .form-input:first-child{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-group-2 > .form-input:last-child{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.form-input::placeholder{
+    color: #ccc;
+    font-style: italic;
+}
+.form-submit{
+    border-radius: 10px;
+    color: white;
+    padding: 12px;
+    outline: none;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    background: #00aefd;
+    display: flex;
+    align-items: center;
+}
+.form-submit-text{
+    margin: 0 auto;
+}
+.form-submit-icon{
+   font-size: 20px;
+}
+.form-tos{
+    display: flex;
+    align-items: center;
+    color: #999;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var array = ['Javascript', 'PHP', 'Ruby'];
+        // var a = array[0];
+        // var b = array[1];
+        // var c = array[2];
+        // Destructuring
+        // var [a, c] = array;
+        // console.log(a, c);
+        var [a, ...rest] = array;
+        console.log(a);
+        console.log(rest);
+
+        var course = {
+            name: 'Huy',
+            age: 23,
+            children: {
+                name: 'ReactJS'
+            }
+        };
+        // Đổi tên để không bị ghi đè name parent(Huy)
+        var {name: parentName, children: { name }} = course;
+        console.log(parentName);
+        console.log(name);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = [2, 7, 3, 7, 5, 7, 9];
+        var max = a[0];
+        var count = 1;
+        // for(var i = 1; i < a.length; i++){
+        //     if(a[i] ==  max){
+        //         count++;
+        //     }
+        //     if(a[i] > max){
+        //         max = a[i];
+        //         count = 1;
+        //     }
+        // }
+
+        // cach 2
+        // for(var i = 1; i < a.length; i++){
+        //     if(a[i] > max){
+        //         max = a[i];
+        //     }
+        // }
+        // for(var i = 0; i < a.length; i++){
+        //     if(max == a[i]){
+        //         count++;
+        //     }
+        // }
+
+        // var swap;
+        // a.sort();
+        // for(var i = 0; i < a.length - 1; i++){
+        //     for(var j = i + 1; j < a.length; j++){
+        //         if(a[i] < a[j]){
+        //             swap = a[i];
+        //             a[i] = a[j];
+        //             a[j] = swap; 
+        //         }
+        //     }
+        // }
+        // loai bo phan tu giong nhau trong mang
+        // var newArr = new Array();
+        // for (var i = 0; i < a.length; i++) {
+        //     // console.log(a.indexOf(a[i]));
+        //     if (newArr.indexOf(a[i]) === -1) {
+        //         newArr.push(a[i])
+        //     }
+        // }
+        // loai bo phan tu giong nhau trong mang cach 2
+        sortArray = new Array();
+        sortArray = a.sort();
+        var newArr = [sortArray[0]];
+        for (let i = 1; i < sortArray.length; i++) {
+            if (sortArray[i] !== sortArray[i - 1]) {
+                newArr.push(sortArray[i])
+            }
+        }
+        console.log(newArr);
+        // in ra so lon thu 2
+        var firstMax;
+        var secondMax;
+        if (a[0] > a[1]) {
+            firstMax = a[0];
+            secondMax = a[1];
+        } else {
+            firstMax = a[1];
+            secondMax = a[0];
+        }
+        for (var i = 2; i < a.length; i++) {
+            if (a[i] >= firstMax) {
+                secondMax = firstMax;
+                firstMax = a[i];
+            } else if (a[i] > secondMax) {
+                secondMax = a[i];
+            }
+        }
+        console.log(secondMax);
+
+        // console.log(a);
+        // console.log(count);
+    </script>
+</body>
+
+</html>

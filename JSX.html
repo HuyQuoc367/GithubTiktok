@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- const reactCourse = 'ReactJS' // {} dùng để viết JS trong JSX, muốn truyền Object thì {{}}
+        const ul = <ul className="ul-1">
+            <li style={{ color: 'red' }}>Javascript</li>
+            <li>{reactCourse}</li>
+        </ul> -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <div id="root"></div>
+    <script type="text/babel">
+        // const ul = React.createElement(
+        //     'ul',
+        //     null,
+        //     React.createElement('li', null, 'Javascript'),
+        //     React.createElement('li', null, 'ReactJS')
+        // )
+
+        const courses = [
+            {
+                name: 'HTML, CSS', 
+            },
+            {
+                name: 'Responsive',
+            },
+            {
+                name: 'ReactJS',
+            }
+        ]
+        // Arrow function
+        const jsx = (
+            <ul>
+                {courses.map((courses, index) =>
+                    <li key={index}>{courses.name}</li>    
+                )}
+            </ul>
+        )
+        
+        // Expression function
+        // const jsx2 = (
+        //     <ul>
+        //         {courses.map(function(newCoures){
+        //             return <li>{newCoures.name}</li>
+        //         })}
+        //     </ul>
+        // )
+
+        // render 2 element buộc phải có wrap bọc lại vì babel là chuyển code jsx sang es5 (đâu thể nào tạo 2 ReactElement để babel chuyển đổi)
+        // const jsx2 = (
+        //     <div>
+        //         <h1>Heading 1</h1>    
+        //         <h1>Heading 2</h1>    
+        //     </div>
+        // )
+
+        // Cách giải quyết khi không muốn có thẻ <div> bao lại
+        const jsx2 = (
+            <React.Fragment>
+                <h1>Heading 1</h1>    
+                <h1>Heading 2</h1>    
+            </React.Fragment>
+        )
+        ReactDOM.render(jsx, document.getElementById('root'))
+    </script>
+</body>
+</html>
